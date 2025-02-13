@@ -6,13 +6,13 @@
 /*   By: khiidenh <khiidenh@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 13:33:10 by khiidenh          #+#    #+#             */
-/*   Updated: 2025/01/23 18:36:37 by khiidenh         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:07:07 by khiidenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	calculate_moves(t_node *node_a, t_node *stack_a, t_node *stack_b)
+static int	calculate_moves(t_node *node_a, t_node *stack_a, t_node *stack_b)
 {
 	int	moves;
 	int	moves_a;
@@ -38,7 +38,7 @@ int	calculate_moves(t_node *node_a, t_node *stack_a, t_node *stack_b)
 	return (moves);
 }
 
-t_node	*get_cheapest(t_node *stack_a, t_node *stack_b)
+static t_node	*get_cheapest(t_node *stack_a, t_node *stack_b)
 {
 	int		moves;
 	int		cheapest_found;
@@ -86,7 +86,7 @@ void	move_a_to_b(t_node **stack_a, t_node **stack_b)
 	pb(stack_a, stack_b);
 }
 
-void	set_target_in_b(t_node *stack_b, t_node *node_a)
+static void	set_target_in_b(t_node *stack_b, t_node *node_a)
 {
 	t_node	*curr;
 	t_node	*pos;

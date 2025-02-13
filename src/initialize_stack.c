@@ -6,17 +6,17 @@
 /*   By: khiidenh <khiidenh@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 16:01:11 by khiidenh          #+#    #+#             */
-/*   Updated: 2025/01/23 18:04:44 by khiidenh         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:09:19 by khiidenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long int	ft_atol(const char *nptr)
+long long int	ft_atoll(const char *nptr)
 {
-	int		i;
-	int		check;
-	long	result;
+	int				i;
+	int				check;
+	long long int	result;
 
 	i = 0;
 	check = 1;
@@ -37,7 +37,7 @@ long int	ft_atol(const char *nptr)
 	return (result * check);
 }
 
-void	append(t_node **head, int data, char **args)
+static void	append(t_node **head, int data, char **args)
 {
 	t_node	*new_node;
 	t_node	*current;
@@ -62,15 +62,15 @@ void	append(t_node **head, int data, char **args)
 
 void	initialize_stack_a(char **args, int arg_count, t_node **stack_a)
 {
-	long int	nbr;
-	int			i;
+	long long int	nbr;
+	int				i;
 
 	i = 0;
 	while (i < arg_count)
 	{
 		if (check_is_digit(args[i]) == false)
 			exit_program(stack_a, args, 0);
-		nbr = ft_atol(args[i]);
+		nbr = ft_atoll(args[i]);
 		if (nbr < INT_MIN || nbr > INT_MAX)
 			exit_program(stack_a, args, 0);
 		if (check_is_duplicate(*stack_a, nbr) == true)

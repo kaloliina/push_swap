@@ -6,13 +6,13 @@
 /*   By: khiidenh <khiidenh@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:03:45 by khiidenh          #+#    #+#             */
-/*   Updated: 2025/01/23 18:45:20 by khiidenh         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:05:03 by khiidenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_node **stack)
+static void	swap(t_node **stack)
 {
 	t_node	*first;
 	t_node	*second;

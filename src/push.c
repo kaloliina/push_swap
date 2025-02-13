@@ -6,13 +6,13 @@
 /*   By: khiidenh <khiidenh@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:14:30 by khiidenh          #+#    #+#             */
-/*   Updated: 2025/01/23 18:42:59 by khiidenh         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:05:27 by khiidenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_node **dest, t_node **source)
+static void	push(t_node **dest, t_node **source)
 {
 	t_node	*temp;
 

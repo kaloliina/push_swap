@@ -6,13 +6,13 @@
 /*   By: khiidenh <khiidenh@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:07:25 by khiidenh          #+#    #+#             */
-/*   Updated: 2025/01/23 18:44:47 by khiidenh         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:05:20 by khiidenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_node **stack)
+static void	rotate(t_node **stack)
 {
 	t_node	*last;
 	t_node	*new_head;

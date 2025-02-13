@@ -6,7 +6,7 @@
 /*   By: khiidenh <khiidenh@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:09:53 by khiidenh          #+#    #+#             */
-/*   Updated: 2025/01/22 18:08:47 by khiidenh         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:08:13 by khiidenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	sort_three(t_node **stack_a)
 		sa(stack_a);
 }
 
-void	min_to_top(t_node **stack_a)
+static void	min_to_top(t_node **stack_a)
 {
 	int		moves;
 	t_node	*curr;
