@@ -6,17 +6,17 @@
 /*   By: khiidenh <khiidenh@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 16:01:11 by khiidenh          #+#    #+#             */
-/*   Updated: 2025/02/13 17:09:19 by khiidenh         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:34:38 by khiidenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long long int	ft_atoll(const char *nptr)
+long int	ft_atol(const char *nptr)
 {
-	int				i;
-	int				check;
-	long long int	result;
+	int			i;
+	int			check;
+	long int	result;
 
 	i = 0;
 	check = 1;
@@ -32,6 +32,8 @@ long long int	ft_atoll(const char *nptr)
 	while (nptr[i] >= 48 && nptr[i] <= 57)
 	{
 		result = result * 10 + (nptr[i] - '0');
+		if (result < 0)
+			return (LONG_MAX);
 		i++;
 	}
 	return (result * check);
@@ -47,6 +49,7 @@ static void	append(t_node **head, int data, char **args)
 		exit_program(head, args, 0);
 	new_node->data = data;
 	new_node->next = NULL;
+	new_node->prev = NULL;
 	if (*head == NULL)
 	{
 		*head = new_node;
@@ -58,20 +61,21 @@ static void	append(t_node **head, int data, char **args)
 		current = current->next;
 	}
 	current->next = new_node;
+	new_node->prev = current;
 }
 
 void	initialize_stack_a(char **args, int arg_count, t_node **stack_a)
 {
-	long long int	nbr;
-	int				i;
+	long int	nbr;
+	int			i;
 
 	i = 0;
 	while (i < arg_count)
 	{
 		if (check_is_digit(args[i]) == false)
 			exit_program(stack_a, args, 0);
-		nbr = ft_atoll(args[i]);
-		if (nbr < INT_MIN || nbr > INT_MAX)
+		nbr = ft_atol(args[i]);
+		if (nbr < INT_MIN || nbr > INT_MAX || nbr == LONG_MAX)
 			exit_program(stack_a, args, 0);
 		if (check_is_duplicate(*stack_a, nbr) == true)
 			exit_program(stack_a, args, 0);
